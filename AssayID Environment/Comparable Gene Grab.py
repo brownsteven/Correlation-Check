@@ -6,10 +6,10 @@ def similarCheck():
     wb = load_workbook(filename='test input file.xlsx')
     ws = wb['Sheet1']
 
-    with open('Test output.csv', 'w') as outcsv:
+    with open('Test output.csv', 'w', newline='') as outcsv:
         writer = csv.writer(outcsv)
-        writer.writerow(['Percentage Match', 'Gene A', 'Assay ID A',
-                         'Gene B', 'Assay ID B'])
+        writer.writerow(['Percentage Match', 'Gene (A)', 'Assay ID (A)',
+                         'Gene (B)', 'Assay ID (B)'])
         for row in ws.rows:
             col = 0
             for cell in row:
