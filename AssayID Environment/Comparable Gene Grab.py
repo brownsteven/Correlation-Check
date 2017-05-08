@@ -8,7 +8,7 @@ def similarCheck():
 
     with open('Test output.csv', 'w', newline='') as outcsv:
         writer = csv.writer(outcsv)
-        writer.writerow(['Percentage Match', 'Gene (A)', 'Assay ID (A)',
+        writer.writerow(['Match %', 'Gene (A)', 'Assay ID (A)',
                          'Gene (B)', 'Assay ID (B)'])
         for row in ws.rows:
             col = 0
@@ -22,10 +22,10 @@ def similarCheck():
                         writer.writerow([cell.value, row[0].value, row[1].value,
                                          ws.cell(row=1, column=col).value, ws.cell(row=2, column=col).value])
 
-                        print('Percentage:', cell.value, 'Gene:',
+                        """print('Percentage:', cell.value, 'Gene:',
                               row[0].value, ws.cell(row=1, column=col).value,
                               'AssayID:', row[1].value,
-                              ws.cell(row=2, column=col).value)
+                              ws.cell(row=2, column=col).value)"""
 
 
 similarCheck()
